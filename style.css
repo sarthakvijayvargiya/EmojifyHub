@@ -10,3 +10,15 @@
     align-items: center;
     height: 100vh;
 }
+
+#emoji{
+    font-size:100px;
+    cursor: pointer;
+    filter:grayscale(1)
+}
+
+#emoji:hover{
+    filter: grayscale(0);
+    font-size: 150px;
+    transform:rotate(-20deg);
+}
