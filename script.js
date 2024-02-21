@@ -1,52 +1,16 @@
-// const emoji = '&#x1F601;';  // 601 to 64F
-// console.log(emoji);
-// const p = document.createElement('p');
-// console.log(p);
-// p.innerHTML = emoji;
-// const div = document.querySelector('#container');
-// div.appendChild(p);
-
-const emojis = [
-  "😆",
-  "😅",
-  "🤣",
-  "😂",
-  "😀",
-  "🤑",
-  "🤨",
-  "🙂",
-  "😊",
-  "😗",
-  "😛",
-  "😏",
-  "🤥",
-  "😴",
-  "🥺",
-  "😧",
-  "😇",
-  "😳",
-  "🙃",
-  "🥴",
-  "🧐",
-  "🤨",
-  "😒",
-  "🤔",
-  "🤭",
-  "🥰",
-  "🤐",
-  "👀",
-  "🤔",
-  "🤪",
-  "🥲",
-  "😃",
-  "😁",
-  "😬",
-];
-
+const p = document.createElement("p");
 const div = document.querySelector("#container");
-const p = document.querySelector("#emoji");
+const MIN_EMOJI_CODE = 0x1F601;
+const MAX_EMOJI_CODE = 0x1F64F;
+let randomEmojiCode;
+
+p.id = "emoji";
+p.innerHTML = "😊";
+div.appendChild(p);
 
 p.addEventListener("mouseover", () => {
-  const randomValue = Math.floor(Math.random() * 34);
-  p.innerHTML = emojis[randomValue];
+  randomEmojiCode = Math.floor(Math.random() * (MAX_EMOJI_CODE - MIN_EMOJI_CODE + 1)) + MIN_EMOJI_CODE;
+  console.log(randomEmojiCode);
+  const emoji = String.fromCodePoint(randomEmojiCode);
+  p.innerHTML = emoji;
 });
