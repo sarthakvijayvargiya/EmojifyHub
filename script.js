@@ -10,7 +10,6 @@ div.appendChild(p);
 
 p.addEventListener("mouseover", () => {
   randomEmojiCode = Math.floor(Math.random() * (MAX_EMOJI_CODE - MIN_EMOJI_CODE + 1)) + MIN_EMOJI_CODE;
-  console.log(randomEmojiCode);
   const emoji = String.fromCodePoint(randomEmojiCode);
   p.innerHTML = emoji;
 });
